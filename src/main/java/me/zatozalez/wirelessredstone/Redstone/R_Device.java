@@ -1,7 +1,6 @@
 package me.zatozalez.wirelessredstone.Redstone;
 
 import me.zatozalez.wirelessredstone.Config.C_Value;
-import me.zatozalez.wirelessredstone.Utils.U_Log;
 import me.zatozalez.wirelessredstone.Utils.U_Signal;
 import me.zatozalez.wirelessredstone.WirelessRedstone;
 import org.bukkit.*;
@@ -177,7 +176,7 @@ public class R_Device {
     }
 
     private void spawnOverloadParticle(Color color){
-        Particle particle = Particle.REDSTONE;
+        Particle particle = Particle.DUST;
         Particle.DustOptions dustOptions = new Particle.DustOptions(color, 1.0F);
 
         Random rd = new Random();

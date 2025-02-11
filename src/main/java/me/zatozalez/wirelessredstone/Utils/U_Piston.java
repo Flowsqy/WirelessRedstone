@@ -39,7 +39,7 @@ public class U_Piston {
                     Material.COBWEB,
                     Material.DRAGON_EGG,
                     Material.JACK_O_LANTERN,
-                    Material.GRASS,
+                    Material.SHORT_GRASS,
                     Material.TALL_GRASS,
                     Material.LEVER,
                     Material.REPEATER,
