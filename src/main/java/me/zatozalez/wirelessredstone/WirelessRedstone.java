@@ -6,8 +6,6 @@ import me.zatozalez.wirelessredstone.Listeners.Modified.*;
 import me.zatozalez.wirelessredstone.Listeners.Natural.*;
 import me.zatozalez.wirelessredstone.Messages.M_Utility;
 import me.zatozalez.wirelessredstone.Redstone.*;
-import me.zatozalez.wirelessredstone.Utils.U_Api;
-import me.zatozalez.wirelessredstone.Utils.U_Metrics;
 import me.zatozalez.wirelessredstone.Utils.U_Log;
 import me.zatozalez.wirelessredstone.Utils.U_Permissions;
 import me.zatozalez.wirelessredstone.Versions.V_Manager;
@@ -17,7 +15,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class WirelessRedstone extends JavaPlugin {
 
-    private static int pluginId = 16969;
     private static WirelessRedstone plugin;
     private static C_Center commandCenter = new C_Center();
 
@@ -35,12 +32,7 @@ public final class WirelessRedstone extends JavaPlugin {
 
     private void initializePlugin(boolean reload) {
         plugin = this;
-        U_Metrics metrics = new U_Metrics(plugin, pluginId);
 
-        String latest = V_Manager.getLatestVersion();
-        if(latest != null && !latest.equals(V_Manager.pluginVersion)){
-            WirelessRedstone.Log(new U_Log(U_Log.LogType.WARNING, "New update available [" + latest + "]! Visit " + "https://www.spigotmc.org/resources/101871/" + " to download the latest version."));
-        }
         V_Manager.setVersion();
         Bukkit.getConsoleSender().sendMessage(getDescription().getFullName() + " by " + ChatColor.RED + getDescription().getAuthors().toString().replace("[", "").replace("]", ""));
         if(!V_Manager.isCompatible()){

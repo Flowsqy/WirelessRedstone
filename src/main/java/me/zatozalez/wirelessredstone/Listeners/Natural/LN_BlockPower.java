@@ -8,7 +8,6 @@ import me.zatozalez.wirelessredstone.Utils.U_Environment;
 import me.zatozalez.wirelessredstone.WirelessRedstone;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.data.AnaloguePowerable;
@@ -51,7 +50,7 @@ public class LN_BlockPower implements Listener {
                 BlockFace blockFace = (BlockFace) data.getFacing().getOppositeFace();
                 if(block.getBlockData() instanceof Switch) {
                     Switch switchBlock = (Switch) block.getBlockData();
-                    switch (switchBlock.getFace()) {
+                    switch (switchBlock.getAttachedFace()) {
                         case FLOOR: {
                             blockFace = BlockFace.DOWN;
                             break;
@@ -60,6 +59,8 @@ public class LN_BlockPower implements Listener {
                             blockFace = BlockFace.UP;
                             break;
                         }
+                        default:
+                            break;
                     }
                 }
                 relativeBlock = block.getRelative(blockFace, 1);
