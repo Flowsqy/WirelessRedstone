@@ -205,6 +205,7 @@ public class U_Signal {
     }
 
     //Powered Rail
+    /*
     private static void powerRail(R_Device device, Block block, int signalPower){
         Rail rail = (Rail) block.getBlockData();
 
@@ -225,6 +226,7 @@ public class U_Signal {
             block.setBlockData(powerable);
         }
     }
+    */
 
     //Piston
     //Sticky Piston
@@ -365,6 +367,8 @@ public class U_Signal {
                 }
                 break;
             }
+            default:
+                break;
         }
 
         Openable openable = (Openable) block.getBlockData();
